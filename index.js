@@ -11,7 +11,7 @@ app.get('/local', function (req, res) {
   const CLIENT_SECRET = 'ee88b9160f689c71ee27a6877591893083179498'
   const CODE = req.query.code
 
-  console.log('REQ CODE', CODE);
+  console.log('REQ CODE', CODE, 'v1.0');
   axios({
     method: 'post',
     url: GITHUB_AUTH_ACCESSTOKEN_URL,
