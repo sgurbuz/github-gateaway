@@ -11,7 +11,7 @@ app.get('/local', function (req, res) {
   const CLIENT_SECRET = 'ee88b9160f689c71ee27a6877591893083179498'
   const CODE = req.query.code
 
-  console.log('REQ CODE', CODE, 'v1.0');
+  console.log('REQ CODE', CODE, 'v1.1');
   axios({
     method: 'post',
     url: GITHUB_AUTH_ACCESSTOKEN_URL,
@@ -23,8 +23,8 @@ app.get('/local', function (req, res) {
     headers: {Accept: 'application/json'},
   })
   .then(function (response) {
-    console.log('Success ' + response.data);
-  	res.status(200).json(response);
+    console.log('Success ', response, response.access_token, response.data);
+  	res.status(200).json(response.data);
   })
   .catch(function (error) {
     console.error('Error ' + error.message)
