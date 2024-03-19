@@ -23,8 +23,8 @@ app.get('/local', function (req, res) {
     }
   })
   .then(function (response) {
-  	res.json(response)
-    console.log('Success ' + response)
+    console.log('Success ' + response);
+  	res.status(200).json(response);
   })
   .catch(function (error) {
     console.error('Error ' + error.message)
