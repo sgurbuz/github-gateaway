@@ -20,10 +20,11 @@ app.get('/local', function (req, res) {
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET,
       code: CODE
-    }
+    },
+    headers: {Accept: 'application/json'},
   })
   .then(function (response) {
-    console.log('Success ' + response);
+    console.log('Success ' + response.data);
   	res.status(200).json(response);
   })
   .catch(function (error) {
