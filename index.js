@@ -4,7 +4,6 @@ var app = express();
 var cors = require('cors');
 
 app.use(cors());
-app.use(express.json());
 
 app.get('/local', function (req, res) {
   const GITHUB_AUTH_ACCESSTOKEN_URL = 'https://github.com/login/oauth/access_token'
