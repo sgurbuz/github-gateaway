@@ -3,7 +3,8 @@ var express = require('express');
 var app = express();
 var cors = require('cors');
 
-app.use(cors);
+app.use(cors());
+app.use(express.json());
 
 app.get('/local', function (req, res) {
   const GITHUB_AUTH_ACCESSTOKEN_URL = 'https://github.com/login/oauth/access_token'
@@ -27,6 +28,11 @@ app.get('/local', function (req, res) {
   .catch(function (error) {
     console.error('Error ' + error.message)
   })
+});
+
+app.get('/', function(req, res) {
+    res.send('Welcome to Github Api Getaway')
+
 });
 
 app.listen(4500, function () {
